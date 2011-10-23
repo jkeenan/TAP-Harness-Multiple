@@ -5,12 +5,49 @@ use Test::More qw( no_plan );
 use TAP::Harness::ReportByDescription;
 use IO::CaptureOutput qw( capture );
 
-# For Test::Harness::ReportByDescription we only need to demonstrate
-# that what appears on STDOUT is the description rather than the filename.
+use_ok( 'TAP::Parser::Aggregator' );
 
 my ($aggregator, $harness);
 my ($stdout, $stderr);
 my @tests;
+
+##### Ordinary use of TAP::Harness #####
+
+@tests = (
+    't/testlib/alpha.t',
+    't/testlib/beta.t',
+);
+
+$aggregator = TAP::Parser::Aggregator->new;
+ok( defined($aggregator),
+    "TAP::Parser::Aggregator::new() returned defined value" );
+isa_ok( $aggregator, 'TAP::Parser::Aggregator' );
+$aggregator->start();
+
+$harness = TAP::Harness->new();
+ok( $harness,
+    "TAP::Harness->new() returned true value" );
+isa_ok( $harness, 'TAP::Harness' );
+
+capture(
+    sub { $harness->aggregate_tests($aggregator, @tests); },
+    \$stdout,
+    \$stderr,
+);
+like( $stdout,
+    qr/t\/testlib\/alpha\.t/s,
+    "alpha.t reported by filename",
+);
+like( $stdout,
+    qr/t\/testlib\/beta\.t/s,
+    "beta.t reported by filename",
+);
+$aggregator->stop();
+
+###### Use of Test::Harness::ReportByDescription #####
+
+# For Test::Harness::ReportByDescription we only need to demonstrate
+# that what appears on STDOUT is the description rather than the filename.
 
 @tests = (
     [
@@ -22,8 +59,6 @@ my @tests;
         'more__t/testlib/beta.t',
     ],
 );
-
-use_ok( 'TAP::Parser::Aggregator' );
 $aggregator = TAP::Parser::Aggregator->new;
 ok( defined($aggregator),
     "TAP::Parser::Aggregator::new() returned defined value" );
