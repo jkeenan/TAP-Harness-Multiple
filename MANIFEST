@@ -1,0 +1,8 @@
+Changes
+lib/TAP/Harness/Archive/MultipleHarnesses.pm
+lib/TAP/Harness/ReportByDescription.pm
+Makefile.PL
+MANIFEST
+README
+t/001_load.t
+Todo
