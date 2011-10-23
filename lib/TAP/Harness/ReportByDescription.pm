@@ -131,7 +131,6 @@ change in how C<aggregate_tests()> is called.
 sub aggregate_tests {
     my ( $self, $aggregate, @tests ) = @_;
 
-    my $jobs      = $self->jobs;
     my $scheduler = $self->make_scheduler(@tests);
 
     # #12458
