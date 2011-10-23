@@ -1,0 +1,5 @@
+README for TAP-Harness-Multiple
+
+This distribution includes packages for extending the functionality of the
+TAP::Harness and TAP::Harness::Archive distributions from CPAN.
+
