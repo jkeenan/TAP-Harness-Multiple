@@ -1,5 +1,4 @@
 TODO list for Perl module TAP::Harness::Multiple
 
-- Nothing yet
-
+1. More tests for MultipleHarnesses.pm.
 
