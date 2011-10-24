@@ -9,6 +9,8 @@ README
 t/001_load.t
 t/002_reportbydescription.t
 t/003_multipleharnesses.t
+t/testlib/aleph.t
 t/testlib/alpha.t
 t/testlib/beta.t
+t/testlib/beth.t
 Todo
