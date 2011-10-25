@@ -91,3 +91,39 @@ like( $stdout,
 );
 $aggregator->stop();
 
+#####
+
+$aggregator = TAP::Parser::Aggregator->new;
+ok( defined($aggregator),
+    "TAP::Parser::Aggregator::new() returned defined value" );
+isa_ok( $aggregator, 'TAP::Parser::Aggregator' );
+$aggregator->start();
+
+$harness = TAP::Harness::ReportByDescription->new( {
+    jobs    => 4,
+} );
+ok( $harness,
+    "TAP::Harness::ReportByDescription->new() returned true value" );
+isa_ok( $harness, 'TAP::Harness::ReportByDescription' );
+can_ok( $harness, qw|
+    summary
+    make_scheduler
+    jobs
+    finish_parser 
+| );
+
+capture(
+    sub { $harness->aggregate_tests($aggregator, @tests); },
+    \$stdout,
+    \$stderr,
+);
+like( $stdout,
+    qr/simple__t\/testlib\/alpha\.t/s,
+    "alpha.t reported by description rather than filename",
+);
+like( $stdout,
+    qr/more__t\/testlib\/beta\.t/s,
+    "beta.t reported by description rather than filename",
+);
+$aggregator->stop();
+

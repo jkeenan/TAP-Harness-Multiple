@@ -283,30 +283,6 @@ sub _get_parser_args {
     return \%args;
 }
 
-sub _open_spool {
-    my $self = shift;
-    my $test = shift;
-
-    if ( my $spool_dir = $ENV{PERL_TEST_HARNESS_DUMP_TAP} ) {
-
-        my $spool = File::Spec->catfile( $spool_dir, $test );
-
-        # Make the directory
-        my ( $vol, $dir, undef ) = File::Spec->splitpath($spool);
-        my $path = File::Spec->catpath( $vol, $dir, '' );
-        eval { mkpath($path) };
-        $self->_croak($@) if $@;
-
-        my $spool_handle = IO::Handle->new;
-        open( $spool_handle, ">$spool" )
-          or $self->_croak(" Can't write $spool ( $! ) ");
-
-        return $spool_handle;
-    }
-
-    return;
-}
-
 1;
 
 =head1 EXAMPLE
