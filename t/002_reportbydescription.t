@@ -91,7 +91,7 @@ like( $stdout,
 );
 $aggregator->stop();
 
-#####
+##### Test $ENV{TEST_JOBS} > 1 #####
 
 $aggregator = TAP::Parser::Aggregator->new;
 ok( defined($aggregator),
@@ -100,7 +100,7 @@ isa_ok( $aggregator, 'TAP::Parser::Aggregator' );
 $aggregator->start();
 
 $harness = TAP::Harness::ReportByDescription->new( {
-    jobs    => 4,
+    jobs        => 4,
 } );
 ok( $harness,
     "TAP::Harness::ReportByDescription->new() returned true value" );
