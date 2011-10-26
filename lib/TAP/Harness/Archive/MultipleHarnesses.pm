@@ -113,7 +113,8 @@ sub runtests {
         File::Path::rmtree($dir);
     }
 
-    print "\nTAP Archive created at $output_file\n" unless $self->verbosity < -1;
+    print "\nTAP Archive created at $output_file\n"
+        unless $self->{formatter}->{verbosity} < -1;
 
     return $aggregator;
 }
