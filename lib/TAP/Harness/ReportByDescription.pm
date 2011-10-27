@@ -135,12 +135,12 @@ sub aggregate_tests {
 
     # #12458
     local $ENV{HARNESS_IS_VERBOSE} = 1
-      if $self->formatter->verbosity > 0;
+      if $self->{formatter}->{verbosity} > 0;
 
     # Formatter gets only names.
-    $self->formatter->prepare( map { $_->description } $scheduler->get_all );
+    $self->{formatter}->prepare( map { $_->description } $scheduler->get_all );
 
-    if ( $self->jobs > 1 ) {
+    if ( $self->{formatter}->{jobs} > 1 ) {
         $self->_aggregate_parallel( $aggregate, $scheduler );
     }
     else {
@@ -226,7 +226,7 @@ sub make_parser {
     my $parser = $self->_construct( $self->parser_class, $args );
 
     $self->_make_callback( 'made_parser', $parser, $job->as_array_ref );
-    my $session = $self->formatter->open_test( $job->description, $parser );
+    my $session = $self->{formatter}->open_test( $job->description, $parser );
 
     return ( $parser, $session );
 }
