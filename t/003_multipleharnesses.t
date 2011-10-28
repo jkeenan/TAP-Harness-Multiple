@@ -6,7 +6,7 @@ use Data::Dumper;$Data::Dumper::Indent=1;
 use File::Basename;
 use File::Copy;
 use File::Temp qw( tempdir );
-use File::Path 2.08 ();
+use File::Path 2.07 ();
 use Test::More qw( no_plan );
 use TAP::Harness::Archive::MultipleHarnesses;
 use IO::CaptureOutput qw( capture );

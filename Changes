@@ -1,5 +1,9 @@
 Revision history for Perl module TAP::Harness::Multiple
 
+0.02 Fri Oct 28 19:46:00 2012
+    - remove unneeded module imports;
+    - File::Path::make_path() can be imported from v2.07 of that module
+
 0.01 Sun Oct 23 08:20:39 2011
     - original version; created by ExtUtils::ModuleMaker 0.51
 
