@@ -2,6 +2,7 @@
 Changes
 lib/TAP/Harness/Archive/MultipleHarnesses.pm
 lib/TAP/Harness/ReportByDescription.pm
+LICENSE
 Makefile.PL
 MANIFEST
 MANIFEST.SKIP
