@@ -5,7 +5,7 @@ use File::Path;
 use File::Spec;
 use lib qw( ./lib );
 use TAP::Harness::ReportByDescription;
-our $VERSION = '0.02';
+our $VERSION = '0.03';
 
 sub runtests {
     my ($self, $targetsref, @files) = @_;
