@@ -3,7 +3,7 @@ use ExtUtils::MakeMaker;
 # the contents of the Makefile that is written.
 WriteMakefile(
     NAME         => 'TAP::Harness::Multiple',
-    VERSION      => '0.03',
+    VERSION      => '0.04',
     AUTHOR       => 'James E Keenan (jkeenan@cpan.org)',
     ABSTRACT     => 'Run and archive multiple test harnesses in a single harness',
     PREREQ_PM    => {
@@ -13,4 +13,5 @@ WriteMakefile(
                      'IO::CaptureOutput' => 0, # for testing only
                      'File::Path' => 2.07,
                     },
+    LICENSE     => 'perl',
 );

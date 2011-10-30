@@ -1,10 +1,13 @@
 Revision history for Perl module TAP::Harness::Multiple
 
-0.03 Sat Oct 29 19:09:00 2012
+0.04 Sun Oct 30 09:11:30 2011
+    - include LICENSE in Makefile.PL
+
+0.03 Sat Oct 29 19:09:00 2011
     - require File::Path 2.07 in Makefile.PL
     - include LICENSE
 
-0.02 Fri Oct 28 19:46:00 2012
+0.02 Fri Oct 28 19:46:00 2011
     - remove unneeded module imports;
     - File::Path::make_path() can be imported from v2.07 of that module
 
