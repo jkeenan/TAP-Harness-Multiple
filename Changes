@@ -1,5 +1,9 @@
 Revision history for Perl module TAP::Harness::Multiple
 
+0.05 Tue Nov 01 21:12:00 2011
+    - only define VERSION in one location (in this instance, Makefile.PL)
+    - modify one test failing superfluously on MSWin32
+
 0.04 Sun Oct 30 09:11:30 2011
     - include LICENSE in Makefile.PL
 

@@ -469,7 +469,8 @@ $cwd = cwd();
     like( $stdout, qr/hebrew__beth/s,  "Test reported by description" );
     like( $stdout, qr/Result: PASS/s,
         "Got summary: different label/tests; same environment" );
-    like( $stdout, qr/TAP Archive created at $archive_file/s,
+    like( $stdout,
+        qr/TAP Archive created at.*?parrot_test_run\.tar\.gz/s,
         "Got verbose output" );
 
     chdir($cwd) or croak "Unable to return to $cwd after testing";
