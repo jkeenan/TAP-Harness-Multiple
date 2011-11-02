@@ -2,6 +2,7 @@ package TAP::Harness::ReportByDescription;
 
 use strict;
 use base 'TAP::Harness';
+our $VERSION = '0.06';
 
 =head1 NAME
 

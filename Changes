@@ -1,5 +1,8 @@
 Revision history for Perl module TAP::Harness::Multiple
 
+0.06 Tue Nov 01 22:20:00 2011
+    - PAUSE refuses to index a lower VERSION (and no VERSION counts as 0)
+
 0.05 Tue Nov 01 21:12:00 2011
     - only define VERSION in one location (in this instance, Makefile.PL)
     - modify one test failing superfluously on MSWin32
