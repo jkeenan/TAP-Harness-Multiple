@@ -1,5 +1,8 @@
 Revision history for Perl module TAP::Harness::Multiple
 
+0.07 Mon Nov 21 21:35:00 2011
+    - Update LICENSE per recommendation of Gerd Pokorra
+
 0.06 Tue Nov 01 22:20:00 2011
     - PAUSE refuses to index a lower VERSION (and no VERSION counts as 0)
 
