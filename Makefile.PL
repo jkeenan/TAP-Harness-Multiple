@@ -6,7 +6,7 @@ my $mm_ver = ExtUtils::MakeMaker->VERSION;
 
 my %WriteMakefileArgs = (
     NAME         => 'TAP::Harness::Multiple',
-    VERSION      => '0.07',
+    VERSION      => '0.08',
     AUTHOR       => 'James E Keenan (jkeenan@pobox.com)',
     ABSTRACT     => 'Run and archive multiple test harnesses in a single harness',
     INSTALLDIRS  => ($] < 5.011 ? 'perl' : 'site'),
